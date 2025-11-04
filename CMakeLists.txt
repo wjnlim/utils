@@ -20,7 +20,7 @@ add_library(utils_ds_objs OBJECT
     src/deque.c
     src/hash_table.c
     src/rb_tree.c
-    src/state_machine.c
+    # src/state_machine.c
 )
 target_include_directories(utils_ds_objs 
     PUBLIC
@@ -53,6 +53,7 @@ install(TARGETS utils_ds
 add_library(utils_objs OBJECT 
     src/my_err.c
     src/socket_helper.c
+    src/state_machine.c
 )
 # target_link_libraries(utils_objs PUBLIC utils_ds_objs)
 target_include_directories(utils_objs 

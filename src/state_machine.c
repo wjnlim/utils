@@ -1,7 +1,7 @@
 #include <stddef.h>
 #include <stdio.h>
 
-#include "utils_ds/state_machine.h"
+#include "utils/state_machine.h"
 
 // void sm_init(State_machine* sm, int initial_state, 
 //                             const Table_element** transition_table) {
