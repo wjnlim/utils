@@ -49,6 +49,12 @@ cmake --install .
 ```
 
 ## Usage Example
+Refer to the demo program in the repository for example usage.
+* [blocking_queue_demo.c](tests/blocking_queue_demo.c)
+* [deque_demo.c](tests/deque_demo.c)
+* [hash_table_demo.c](tests/hash_table_demo.c)
+* [rb_tree_demo.c](tests/rb_tree_demo.c)
+
 To compile your program using this library (for example, if you include #include "utils_ds/deque.h"):
 ```bash
 gcc your_prog.c -o your_prog -I <your install directory>/include \
