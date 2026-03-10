@@ -1,34 +1,38 @@
-# utils
+# utils — Common Utilities and Data Structures
 
-A collection of **common utilities and data structures** used across several related projects.
+A small collection of helper utilities and data structures used across several related projects.
 
 ## Overview
 
-This project provides reusable components such as data structures and helper
- utilities that are shared among the following projects:
+`utils` provides reusable components that are shared among the following projects:
 
-- [ep_engine](https://github.com/wjnlim/ep_engine.git)
-- [msg_pass](https://github.com/wjnlim/msg_pass.git)
-- [mrwsi](https://github.com/wjnlim/mrwsi.git)
+- [ep_engine](https://github.com/wjnlim/ep_engine)
+- [msg_pass](https://github.com/wjnlim/msg_pass)
+- [direct-access-mapreduce](https://github.com/wjnlim/direct-access-mapreduce)
 
-Although this is originally developed for the above projects, **`utils`** can also be used as a standalone **data structure library** for other C projects.
+This repo mainly contains small data structures and helper utilities that support the implementation of those systems.
 
----
+Although primarily developed for internal use in the projects listed above,
+the data structures are provided as a small library and can also be used
+in other C applications.
+
+## Provided Components
+
+The library currently includes several basic data structures:
+
+- blocking queue  
+- deque  
+- hash table  
+- red-black tree  
 
 ## Notes
-- This library depends on pthread, so you must link with **-lpthread**
-- This project is mainly for personal use, not for production codes.\
-  Thus, the code may lack thorough testing, so please use it with caution.
-- This library provides the following main data structures:
-    - blocking_queue
-    - deque
-    - hash_table
-    - red-black tree
----
 
+This project does **not aim to provide production-level data structure implementations**, and testing and edge-case coverage are intentionally minimal.
+
+Dependencies:
+
+- `pthread`
 ## Build and Installation
-
-Follow these steps to build and install the library:
 
 ```bash
 # 1. Clone the repository
@@ -48,14 +52,15 @@ cmake --build . --target utils_ds
 cmake --install .
 ```
 
-## Usage Example
-Refer to the demo program in the repository for example usage.
-* [blocking_queue_demo.c](tests/blocking_queue_demo.c)
-* [deque_demo.c](tests/deque_demo.c)
-* [hash_table_demo.c](tests/hash_table_demo.c)
-* [rb_tree_demo.c](tests/rb_tree_demo.c)
+## Example Programs
+Example programs are available in the repository:
+* [tests/blocking_queue_demo.c](tests/blocking_queue_demo.c)
+* [tests/deque_demo.c](tests/deque_demo.c)
+* [tests/hash_table_demo.c](tests/hash_table_demo.c)
+* [tests/rb_tree_demo.c](tests/rb_tree_demo.c)
 
-To compile your program using this library (for example, if you include #include "utils_ds/deque.h"):
+## Using the Library
+To compile a program that uses this library (for example, including utils_ds/deque.h):
 ```bash
 gcc your_prog.c -o your_prog -I <your install directory>/include \
   <your install directory>/lib/libutils_ds.a -lpthread
